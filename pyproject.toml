@@ -1,0 +1,45 @@
+[project]
+name = "file-system-assistant"
+version = "0.1.0"
+description = ""
+readme = "README.md"
+authors = [
+    { name = "Sudhanshu", email = "ksudhanshu1821@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "pydantic>=2.12.5,<3.0.0",
+    "pydantic-settings>=2.13.0,<3.0.0",
+    "pymupdf>=1.27.1,<2.0.0",
+    "python-docx>=1.2.0,<2.0.0",
+    "pypandoc>=1.16.2,<2.0.0",
+    "google-genai>=1.64.0",
+    "prompt-toolkit>=3.0.52",
+    "rich>=14.3.3",
+    "openai>=2.24.0",
+]
+
+[project.scripts]
+fsa-app = "file_system_assistant.app.cli:main"
+
+[build-system]
+requires = ["uv_build>=0.10.4,<0.11.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.2",
+    "pytest-cov>=7.0.0",
+    "ruff>=0.15.1",
+    "mypy>=1.19.1",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.mypy]
+python_version = "3.13"
+strict = true

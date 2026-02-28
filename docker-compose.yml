@@ -1,0 +1,10 @@
+services:
+  fsa-app:
+    image: local-fsa-app
+    build: .
+    stdin_open: true
+    tty: true
+    environment:
+      PYTHONUNBUFFERED: 1
+      OPENAI_API_KEY: ${OPENAI_API_KEY}
+      GOOGLE_API_KEY: ${GOOGLE_API_KEY}
