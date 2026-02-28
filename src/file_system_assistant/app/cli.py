@@ -42,6 +42,7 @@ def main():
             )
             
             if not user_query.strip() or user_query.lower() in (Constants.QUIT, Constants.EXIT):
+                fsa.close()
                 break
 
             response = fsa.ask(user_query)
@@ -52,3 +53,5 @@ def main():
         except Exception as e:
             logger.error(f"LLM failure: {e}")
             cout.write_block("An internal error occurred.")
+        finally:
+            fsa.close()
