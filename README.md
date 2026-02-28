@@ -6,10 +6,6 @@
 
 ---
 
-## Usage
-
----
-
 ## Requirements
 
 ### 1. Set the `GOOGLE_API_KEY` or `OPENAI_API_KEY` Environment Variable
