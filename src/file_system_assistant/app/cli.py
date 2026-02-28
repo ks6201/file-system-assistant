@@ -42,7 +42,6 @@ def main():
             )
             
             if not user_query.strip() or user_query.lower() in (Constants.QUIT, Constants.EXIT):
-                fsa.close()
                 break
 
             response = fsa.ask(user_query)
