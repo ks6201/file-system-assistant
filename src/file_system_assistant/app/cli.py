@@ -42,15 +42,16 @@ def main():
             )
             
             if not user_query.strip() or user_query.lower() in (Constants.QUIT, Constants.EXIT):
+                fsa.close()
                 break
 
             response = fsa.ask(user_query)
             
             cout.write_block(f"{get_prompt_text(LLMRole.ASSISTANT)}{response}")
         except KeyboardInterrupt:
+            fsa.close()
             break
         except Exception as e:
             logger.error(f"LLM failure: {e}")
             cout.write_block("An internal error occurred.")
-        finally:
             fsa.close()
